@@ -47,4 +47,8 @@ public class ExpenseTrackerController {
     view.refreshTable(filtered);
   }
 
+  public void clearFilter() {
+    refresh();
+}
+
 }

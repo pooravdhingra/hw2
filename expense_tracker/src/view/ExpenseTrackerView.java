@@ -17,6 +17,7 @@ public class ExpenseTrackerView extends JFrame {
   private JComboBox<String> filterTypeBox; // “Amount” or “Category”
   private JTextField      filterValueField;
   private JButton         applyFilterBtn;
+  private JButton removeFilterBtn;
 
   public ExpenseTrackerView() {
     setTitle("Expense Tracker"); // Set title
@@ -30,6 +31,7 @@ public class ExpenseTrackerView extends JFrame {
     filterTypeBox   = new JComboBox<>(new String[]{"Amount", "Category"});
     filterValueField= new JTextField(8);
     applyFilterBtn  = new JButton("Apply Filter");
+    removeFilterBtn = new JButton("Remove Filter");
 
 
     // Create UI components
@@ -57,6 +59,7 @@ public class ExpenseTrackerView extends JFrame {
     inputPanel.add(filterTypeBox);
     inputPanel.add(filterValueField);
     inputPanel.add(applyFilterBtn);
+    inputPanel.add(removeFilterBtn);
 
   
     JPanel buttonPanel = new JPanel();
@@ -136,5 +139,6 @@ public class ExpenseTrackerView extends JFrame {
   public JButton getApplyFilterBtn() { return applyFilterBtn; }
   public String  getSelectedFilterType() { return (String) filterTypeBox.getSelectedItem(); }
   public String  getFilterValue()  { return filterValueField.getText(); }
+  public JButton getRemoveFilterBtn() { return removeFilterBtn; }
 
 }

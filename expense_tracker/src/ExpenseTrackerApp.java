@@ -51,6 +51,7 @@ public class ExpenseTrackerApp {
       }
     });
 
+    view.getRemoveFilterBtn().addActionListener(e -> controller.clearFilter());
 
   }
 
