@@ -1,16 +1,11 @@
 package view;
 
-import javax.swing.*;
-import javax.swing.JFormattedTextField.AbstractFormatterFactory;
-import javax.swing.table.DefaultTableModel;
-
-import controller.InputValidation;
-
 import java.awt.*;
 import java.text.NumberFormat;
-
-import model.Transaction;
 import java.util.List;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import model.Transaction;
 
 public class ExpenseTrackerView extends JFrame {
 
@@ -19,7 +14,9 @@ public class ExpenseTrackerView extends JFrame {
   private JFormattedTextField amountField;
   private JTextField categoryField;
   private DefaultTableModel model;
-  
+  private JComboBox<String> filterTypeBox; // “Amount” or “Category”
+  private JTextField      filterValueField;
+  private JButton         applyFilterBtn;
 
   public ExpenseTrackerView() {
     setTitle("Expense Tracker"); // Set title
@@ -29,6 +26,11 @@ public class ExpenseTrackerView extends JFrame {
     this.model = new DefaultTableModel(columnNames, 0);
 
     addTransactionBtn = new JButton("Add Transaction");
+    
+    filterTypeBox   = new JComboBox<>(new String[]{"Amount", "Category"});
+    filterValueField= new JTextField(8);
+    applyFilterBtn  = new JButton("Apply Filter");
+
 
     // Create UI components
     JLabel amountLabel = new JLabel("Amount:");
@@ -51,6 +53,11 @@ public class ExpenseTrackerView extends JFrame {
     inputPanel.add(categoryLabel); 
     inputPanel.add(categoryField);
     inputPanel.add(addTransactionBtn);
+    inputPanel.add(new JLabel("Filter by:"));
+    inputPanel.add(filterTypeBox);
+    inputPanel.add(filterValueField);
+    inputPanel.add(applyFilterBtn);
+
   
     JPanel buttonPanel = new JPanel();
     buttonPanel.add(addTransactionBtn);
@@ -125,4 +132,9 @@ public class ExpenseTrackerView extends JFrame {
   public void setCategoryField(JTextField categoryField) {
     this.categoryField = categoryField;
   }
+
+  public JButton getApplyFilterBtn() { return applyFilterBtn; }
+  public String  getSelectedFilterType() { return (String) filterTypeBox.getSelectedItem(); }
+  public String  getFilterValue()  { return filterValueField.getText(); }
+
 }

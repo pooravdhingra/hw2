@@ -1,11 +1,10 @@
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
 import controller.ExpenseTrackerController;
+import filter.AmountFilter;
+import filter.CategoryFilter;
+import filter.TransactionFilter;
+import javax.swing.JOptionPane;
 import model.ExpenseTrackerModel;
 import view.ExpenseTrackerView;
-import model.Transaction;
-import controller.InputValidation;
 
 public class ExpenseTrackerApp {
 
@@ -33,6 +32,25 @@ public class ExpenseTrackerApp {
         view.toFront();
       }
     });
+
+    view.getApplyFilterBtn().addActionListener(e -> {
+      String type  = view.getSelectedFilterType();
+      String value = view.getFilterValue();
+
+      try {
+        TransactionFilter f =
+            type.equals("Amount")
+            ? new AmountFilter(Double.parseDouble(value))
+            : new CategoryFilter(value);
+
+        controller.applyFilter(f);
+      } catch (NumberFormatException nfe) {
+          JOptionPane.showMessageDialog(view, "Amount must be numeric");
+      } catch (IllegalArgumentException iae) {
+          JOptionPane.showMessageDialog(view, iae.getMessage());
+      }
+    });
+
 
   }
 
