@@ -24,7 +24,7 @@
 		 version="true"
 		 access="private"
 		 use="true"
-		 windowtitle="CS520 - Homework 1">
+		 windowtitle="CS520 - Homework 2">
 	    <fileset dir="src"/>
 	</javadoc>
     </target>
