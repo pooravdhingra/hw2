@@ -1,0 +1,13 @@
+d0433f6  pooravdhingra  Sun Apr 13 17:58:03 2025 -0400  generated jdoc and updated gitignore to commit jdoc
+29fe4ef  pooravdhingra  Sun Apr 13 17:53:56 2025 -0400  updated README.md
+ddc0237  pooravdhingra  Sun Apr 13 17:49:48 2025 -0400  testing improvements
+f37ff8c  pooravdhingra  Sun Apr 13 17:42:49 2025 -0400  implemented remove filter button
+c80b7af  pooravdhingra  Sun Apr 13 17:41:07 2025 -0400  implemented filter functionality
+9cfe68a  pooravdhingra  Sun Apr 13 17:40:43 2025 -0400  added filter package and components
+41fbfb5  pooravdhingra  Sun Apr 13 16:48:29 2025 -0400  modularity improvements
+66d91cb  pooravdhingra  Sun Apr 13 16:47:38 2025 -0400  updated build.xml jdoc title to homework 2
+b21da9f  Mahbuba Tasmin  Sat Sep 2 02:42:57 2023 -0400  Build file update
+ccabaff  Mahbuba Tasmin  Tue Aug 29 14:49:22 2023 -0400  File Update
+2574c71  Mahbuba Tasmin  Wed Aug 9 14:11:14 2023 -0400  Total Cost and Serial update
+d29d2c8  Mahbuba Tasmin  Wed Aug 9 12:54:46 2023 -0400  HW2 template files
+6a51d80  Mahbuba Tasmin  Tue Aug 8 21:48:41 2023 -0400  Initial commit
